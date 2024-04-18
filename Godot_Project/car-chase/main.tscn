@@ -1,0 +1,263 @@
+[gd_scene load_steps=31 format=3 uid="uid://vts2xl0t0xub"]
+
+[ext_resource type="Script" path="res://car-chase/main.gd" id="1_4vo0y"]
+[ext_resource type="PackedScene" uid="uid://dmx35olfvlw1g" path="res://car-chase/models/GLTF format/sedanSports.glb" id="2_8tlhw"]
+[ext_resource type="PackedScene" uid="uid://54poe2rw77us" path="res://car-chase/models/GLTF format/grandStand.glb" id="2_x120l"]
+[ext_resource type="PackedScene" uid="uid://beov4dfbufrrb" path="res://car-chase/models/GLTF format/roadStart.glb" id="3_aoxjj"]
+[ext_resource type="PackedScene" uid="uid://bhps4ex1j7y6l" path="res://car-chase/models/GLTF format/roadStartPositions.glb" id="4_wk1t3"]
+[ext_resource type="PackedScene" uid="uid://lhxmqughqxyp" path="res://car-chase/models/GLTF format/treeLarge.glb" id="5_n36w7"]
+[ext_resource type="PackedScene" uid="uid://pwbgmddp23bo" path="res://car-chase/models/GLTF format/roadCurved.glb" id="6_17k1c"]
+[ext_resource type="PackedScene" uid="uid://vjsn6w03bl3n" path="res://car-chase/models/GLTF format/roadCornerLarge.glb" id="7_v3bah"]
+[ext_resource type="PackedScene" uid="uid://bqrb1hwardlnm" path="res://car-chase/models/GLTF format/tentRoof.glb" id="8_0ii1c"]
+[ext_resource type="PackedScene" uid="uid://b54ikrmqps1vv" path="res://car-chase/models/GLTF format/barrierWall.glb" id="9_lnf5y"]
+[ext_resource type="PackedScene" uid="uid://c365e4abjh5d0" path="res://car-chase/models/GLTF format/treeSmall.glb" id="10_mlmfp"]
+[ext_resource type="PackedScene" uid="uid://5a7geeib62qd" path="res://car-chase/models/GLTF format/roadCornerSmall.glb" id="11_1s7c7"]
+[ext_resource type="PackedScene" uid="uid://cda4e5qda3l2u" path="res://car-chase/models/GLTF format/grandStandRound.glb" id="12_s67d2"]
+[ext_resource type="PackedScene" uid="uid://bcj2kry0u8vw7" path="res://car-chase/models/GLTF format/roadCornerSmallBorder.glb" id="13_ais5x"]
+[ext_resource type="PackedScene" uid="uid://dl5sv3dvf2uab" path="res://car-chase/models/GLTF format/roadCornerLargeBorder.glb" id="14_ntwdg"]
+[ext_resource type="PackedScene" uid="uid://vh6mrbl8yv5l" path="res://car-chase/models/GLTF format/roadBump.glb" id="15_c42bc"]
+[ext_resource type="PackedScene" uid="uid://c74h2k1aggtqu" path="res://car-chase/models/GLTF format/roadCornerLarger.glb" id="16_kpch4"]
+[ext_resource type="PackedScene" uid="uid://bqqw2wkiuqjfr" path="res://car-chase/models/GLTF format/roadStraightBridgeStart.glb" id="17_5x4qr"]
+[ext_resource type="PackedScene" uid="uid://ctl18lke68h1j" path="res://car-chase/models/GLTF format/roadRampLongWall.glb" id="18_t2n40"]
+[ext_resource type="PackedScene" uid="uid://bcu0h1mviggbn" path="res://car-chase/models/GLTF format/roadStraightBridge.glb" id="19_g8qg1"]
+[ext_resource type="PackedScene" uid="uid://bcbptxjxj1g5b" path="res://car-chase/models/GLTF format/roadStraightLong.glb" id="20_f2nyy"]
+[ext_resource type="PackedScene" uid="uid://f0yxyo2akqir" path="res://car-chase/models/GLTF format/roadStraightBridgeMid.glb" id="21_y61l6"]
+[ext_resource type="PackedScene" uid="uid://cigoi8uoqilbt" path="res://car-chase/models/GLTF format/roadCornerBridgeSmall.glb" id="22_dkyc0"]
+[ext_resource type="PackedScene" uid="uid://c1f2gxnbmtvll" path="res://car-chase/models/GLTF format/roadStraightLongBump.glb" id="23_vxnv1"]
+[ext_resource type="PackedScene" uid="uid://biunegs8tkvn0" path="res://addons/godot_vision/VisionVolumeCamera.tscn" id="25_6sd0k"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u7cm4"]
+size = Vector3(18, 1, 15)
+
+[sub_resource type="Curve3D" id="Curve3D_h7jb4"]
+bake_interval = 10.14
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.744795, 0.00658166, 0.0114363, 0.545205, 0.00415969, -0.0582604, -0.545, -0.004, 2.08165e-12, -2.49, 0.00658202, -0.125241, 0.256428, -0.0219347, 0.0104041, -0.256428, 0.0219347, -0.0104041, -4.34062, 0.00658202, 0.428524, 0.261325, 7.15256e-07, 0.17981, -0.261325, -7.15256e-07, -0.17981, -5.27416, 0.00658202, 0.171182, 0.0427923, 7.15256e-07, 0.183499, -0.0427923, -7.15256e-07, -0.183499, -5.87894, 0.00658202, -0.73599, 0, 0, 0, 0, 0, 0, -5.75798, 0.00658202, -1.77621, 0, 0, 0, 0, 0, 0, -4.8629, 0.00658202, -2.50195, 0, 0, 0, 0, 0, 0, -3.83478, 0.00658202, -2.69548, 0, 0, 0, 0, 0, 0, -2.37121, 0.00658202, -3.03416, 0, 0, 0, 0, 0, 0, -1.86319, 0.00658202, -3.96552, 0, 0, 0, 0, 0, 0, -0.831662, 0.00658202, -4.16526, 0, 0, 0, 0, 0, 0, -0.125681, 0.00658202, -4.488, 0, 0, 0, 0, 0, 0, 0.997663, 0.0250635, -4.62919, -0.345423, 0.000301123, -1.90735e-06, 0.345423, -0.000301123, 1.90735e-06, 1.53621, 0.182687, -4.58475, 0, 0, 0, 0, 0, 0, 2.31499, 0.00658202, -4.52834, 0, 0, 0, 0, 0, 0, 3.6261, 0.00658202, -4.38714, 0, 0, 0, 0, 0, 0, 4.41276, 0.00658202, -3.74167, 0, 0, 0, 0, 0, 0, 4.81618, 0.00658202, -2.95501, 0, 0, 0, 0, 0, 0, 4.9835, 0.00658274, -2.12693, 0, 0, 0, 0, 0, 0, 4.98458, 0.316153, -1.14607, 0, 0, 0, 0, 0, 0, 4.98458, 0.566741, -0.215021, 0, 0, 0, 0, 0, 0, 4.93105, 0.578534, 0.669804, 0, 0, 0, 0, 0, 0, 4.93995, 0.581153, 1.8759, 0, 0, 0, 0, 0, 0, 4.95956, 0.556956, 2.80023, 0, 0, 0, 0, 0, 0, 4.48432, 0.544149, 3.36012, 0, 0, 0, 0, 0, 0, 3.75015, 0.357341, 3.29025, 0, 0, 0, 0, 0, 0, 2.4851, 0.0487509, 3.30283, 0, 0, 0, 0, 0, 0, 1.52833, 0.00658202, 3.37864, 0, 0, 0, 0, 0, 0, 0.217223, 0.00658202, 3.45933, 0, 0, 0, 0, 0, 0, -0.650124, 0.00658202, 4.12497, 0, 0, 0, 0, 0, 0, -0.692207, 0.00658202, 5.60515, 0, 0, 0, 0, 0, 0, -0.0360694, 0.00658202, 6.23276, 0, 0, 0, 0, 0, 0, 1.39032, 0.00658202, 6.26129, -0.345372, -0.0110757, -0.0451088, 0.345372, 0.0110757, 0.0451088, 2.41582, 0.0525584, 5.90942, -0.565798, 0.0107999, 0.127026, 0.565798, -0.0107999, -0.127026, 3.48446, 0.314371, 5.8497, -0.259453, -0.00680614, -0.0341511, 0.259453, 0.00680614, 0.0341511, 4.40452, 0.0536323, 5.96375, 0, 0, 0, 0, 0, 0, 5.52684, 0.00658202, 5.63368, 0, 0, 0, 0, 0, 0, 6.43973, 0.00658202, 4.97754, 0, 0, 0, 0, 0, 0, 6.95323, 0.00658202, 3.8079, 0, 0, 0, 0, 0, 0, 6.9247, 0.00658202, 2.66679, 0, 0, 0, 0, 0, 0, 6.38267, 0.00658202, 1.78243, 0, 0, 0, 0, 0, 0, 5.86917, 0.00658202, 1.24041, 0, 0, 0, 0, 0, 0, 4.21456, 0.00658202, 0.841019, 0, 0, 0, 0, 0, 0, 3.98845, 0.00658202, 0.24897, 0, 0, 0, 0, 0, 0, 3.46975, 0.00658202, -0.0569315, 0, 0, 0, 0, 0, 0, 2.80474, 0.00658202, -0.0968318, 0, 0, 0, 0, 0, 0, 2.05994, 0.00658202, -0.0835317, 0, 0, 0, 0, 0, 0, -0.744795, 0.00658166, 0.0114363),
+"tilts": PackedFloat32Array(2.08165e-12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 48
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_06k5r"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ngrrd"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_dee53"]
+material = SubResource("StandardMaterial3D_ngrrd")
+
+[node name="Example GodotVision Scene" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0050149, -0.00658166, 0.00135791)
+script = ExtResource("1_4vo0y")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.190262, 0.94702, -0.258754, -0.561008, 0.321175, 0.762966, 0.805649, 6.40326e-09, 0.592393, 0, 0, 0)
+
+[node name="track_and_path" type="Node3D" parent="."]
+
+[node name="track" type="Node3D" parent="track_and_path"]
+transform = Transform3D(-4.37114e-08, 3.48786e-16, 1, 3.48786e-16, 1, -3.48786e-16, -1, 3.48786e-16, -4.37114e-08, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+
+[node name="ground" type="StaticBody3D" parent="track_and_path/track"]
+transform = Transform3D(-4.37114e-08, 3.48786e-16, -1, 3.48786e-16, 1, 3.48786e-16, 1, -3.48786e-16, -4.37114e-08, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="track_and_path/track/ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.65, 0)
+shape = SubResource("BoxShape3D_u7cm4")
+
+[node name="track_elements" type="Node3D" parent="track_and_path/track"]
+
+[node name="grandStand" parent="track_and_path/track/track_elements" instance=ExtResource("2_x120l")]
+transform = Transform3D(-4.37114e-08, 3.48787e-16, -1, 3.48787e-16, 1, 3.48787e-16, 1, -3.48787e-16, -4.37114e-08, 0.369669, -0.15, -0.723741)
+
+[node name="roadStart" parent="track_and_path/track/track_elements" instance=ExtResource("3_aoxjj")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.12239e-23, 0, 1.12239e-23, 1, -0.18, -0.14, 0.2)
+
+[node name="roadStartPositions" parent="track_and_path/track/track_elements" instance=ExtResource("4_wk1t3")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.12239e-23, 0, 1.12239e-23, 1, -0.05, -0.14, 2.2)
+
+[node name="treeLarge" parent="track_and_path/track/track_elements" instance=ExtResource("5_n36w7")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.12239e-23, 0, 1.12239e-23, 1, 0.53656, -0.14, -6.14243)
+
+[node name="roadCurved" parent="track_and_path/track/track_elements" instance=ExtResource("6_17k1c")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.12239e-23, 0, 1.12239e-23, 1, -0.0510898, -0.14, -1.79873)
+
+[node name="roadCornerLarge" parent="track_and_path/track/track_elements" instance=ExtResource("7_v3bah")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.12239e-23, 0, 1.12239e-23, 1, -0.550734, -0.14, -3.79883)
+
+[node name="roadCornerLarge2" parent="track_and_path/track/track_elements" instance=ExtResource("7_v3bah")]
+transform = Transform3D(-4.37114e-08, -3.48787e-16, -1, 3.48787e-16, 1, -3.48787e-16, 1, -3.48787e-16, -4.37114e-08, 0.44659, -0.14, -6.09854)
+
+[node name="roadCurved2" parent="track_and_path/track/track_elements" instance=ExtResource("6_17k1c")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.12239e-23, 0, 1.12239e-23, 1, 2.94656, -0.14, -1.80646)
+
+[node name="tentRoof" parent="track_and_path/track/track_elements" instance=ExtResource("8_0ii1c")]
+transform = Transform3D(0.907851, -1.14104e-16, -0.419294, 1.78385e-16, 1, 1.14104e-16, 0.419294, -1.78385e-16, 0.907851, 0.73764, -0.14, -3.16374)
+
+[node name="treeLarge2" parent="track_and_path/track/track_elements" instance=ExtResource("5_n36w7")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.12239e-23, 0, 1.12239e-23, 1, 1.94212, -0.14, -2.3724)
+
+[node name="treeLarge3" parent="track_and_path/track/track_elements" instance=ExtResource("5_n36w7")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.12239e-23, 0, 1.12239e-23, 1, 1.51781, -0.14, -1.64883)
+
+[node name="grandStand2" parent="track_and_path/track/track_elements" instance=ExtResource("2_x120l")]
+transform = Transform3D(-4.37114e-08, 3.48787e-16, -1, 3.48787e-16, 1, 3.48787e-16, 1, -3.48787e-16, -4.37114e-08, 0.369669, -0.15, 0.299657)
+
+[node name="barrierWall" parent="track_and_path/track/track_elements" instance=ExtResource("9_lnf5y")]
+transform = Transform3D(-4.37114e-08, 3.48787e-16, 1, 3.48787e-16, 1, -3.48787e-16, -1, 3.48787e-16, -4.37114e-08, 1.49547, -0.14, -0.45795)
+
+[node name="barrierWall2" parent="track_and_path/track/track_elements" instance=ExtResource("9_lnf5y")]
+transform = Transform3D(-4.37114e-08, 3.48787e-16, 1, 3.48787e-16, 1, -3.48787e-16, -1, 3.48787e-16, -4.37114e-08, 1.49547, -0.14, 0.617895)
+
+[node name="treeSmall" parent="track_and_path/track/track_elements" instance=ExtResource("10_mlmfp")]
+transform = Transform3D(-4.37114e-08, 3.48787e-16, -1, 3.48787e-16, 1, 3.48787e-16, 1, -3.48787e-16, -4.37114e-08, 1.3629, -0.14, -2.10591)
+
+[node name="roadCornerSmall" parent="track_and_path/track/track_elements" instance=ExtResource("11_1s7c7")]
+transform = Transform3D(-4.37114e-08, 6.97574e-16, 1, 4.02206e-24, 1, -6.97574e-16, -1, 1.5246e-23, -4.37114e-08, 4.24553, -0.14, -1.81459)
+
+[node name="roadCornerSmall2" parent="track_and_path/track/track_elements" instance=ExtResource("11_1s7c7")]
+transform = Transform3D(1.19249e-08, -3.48787e-16, -1, 3.48787e-16, 1, -3.48787e-16, 1, -3.48786e-16, 1.19249e-08, 2.94332, -0.14, -2.11214)
+
+[node name="grandStandRound" parent="track_and_path/track/track_elements" instance=ExtResource("12_s67d2")]
+transform = Transform3D(0.855581, 3.48787e-16, 0.517669, -4.78972e-16, 1, 1.1786e-16, -0.517669, -3.48787e-16, 0.855581, 2.39455, -0.14, -6.39631)
+
+[node name="roadCornerSmallBorder" parent="track_and_path/track/track_elements" instance=ExtResource("13_ais5x")]
+transform = Transform3D(-4.37114e-08, 3.48787e-16, -1, 3.48787e-16, 1, 3.48787e-16, 1, -3.48787e-16, -4.37114e-08, 2.94124, -0.14, -2.12023)
+
+[node name="grandStand3" parent="track_and_path/track/track_elements" instance=ExtResource("2_x120l")]
+transform = Transform3D(0.493684, 3.48787e-16, -0.869641, 1.3113e-16, 1, 4.7551e-16, 0.869642, -3.48787e-16, 0.493684, 2.28559, -0.14, -5.89972)
+
+[node name="barrierWall3" parent="track_and_path/track/track_elements" instance=ExtResource("9_lnf5y")]
+transform = Transform3D(-0.777651, 8.91256e-16, 0.628696, 7.49527e-16, 1, -4.90515e-16, -0.628696, 8.97751e-17, -0.777651, 3.09447, -0.14, -6.62402)
+
+[node name="roadCornerLargeBorder" parent="track_and_path/track/track_elements" instance=ExtResource("14_ntwdg")]
+transform = Transform3D(0.987119, 3.48787e-16, 0.159985, -4.00095e-16, 1, 2.88494e-16, -0.159985, -3.48787e-16, 0.987119, -0.414333, -0.14, -3.53849)
+
+[node name="roadBump" parent="track_and_path/track/track_elements" instance=ExtResource("15_c42bc")]
+transform = Transform3D(1, -3.48787e-16, 0, 3.48787e-16, 1, -3.48787e-16, 0, 3.48787e-16, 1, 4.44075, -0.140443, 3.17936)
+
+[node name="roadCurved3" parent="track_and_path/track/track_elements" instance=ExtResource("6_17k1c")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.12239e-23, 0, 1.12239e-23, 1, 4.44245, -0.14, 1.18224)
+
+[node name="roadCornerLarger" parent="track_and_path/track/track_elements" instance=ExtResource("16_kpch4")]
+transform = Transform3D(-1, 3.48787e-16, -8.74228e-08, 3.48787e-16, 1, -3.48787e-16, 8.74228e-08, -3.48787e-16, -1, 4.74023, -0.14, 1.87792)
+
+[node name="roadStraightBridgeStart" parent="track_and_path/track/track_elements" instance=ExtResource("17_5x4qr")]
+transform = Transform3D(-4.37114e-08, 3.48787e-16, -1, 3.48787e-16, 1, 3.48787e-16, 1, -3.48787e-16, -4.37114e-08, -2.53236, -0.147263, 4.87622)
+
+[node name="roadRampLongWall" parent="track_and_path/track/track_elements" instance=ExtResource("18_t2n40")]
+transform = Transform3D(-4.37114e-08, 3.48787e-16, 1, 3.48787e-16, 1, -3.48787e-16, -1, 3.48787e-16, -4.37114e-08, 2.74971, -0.14, 5.17583)
+
+[node name="roadStraightBridge" parent="track_and_path/track/track_elements" instance=ExtResource("19_g8qg1")]
+transform = Transform3D(-4.37114e-08, 3.48787e-16, -1, 3.48787e-16, 1, 3.48787e-16, 1, -3.48787e-16, -4.37114e-08, -3.49773, -0.147676, 4.87527)
+
+[node name="roadStraightLong" parent="track_and_path/track/track_elements" instance=ExtResource("20_f2nyy")]
+transform = Transform3D(-1, 3.48787e-16, -8.74228e-08, 3.48787e-16, 1, -3.48787e-16, 8.74228e-08, -3.48787e-16, -1, 0.250194, -0.14, 0.878928)
+
+[node name="roadCornerSmall3" parent="track_and_path/track/track_elements" instance=ExtResource("11_1s7c7")]
+transform = Transform3D(-1, 3.48787e-16, -8.74228e-08, 3.48787e-16, 1, -3.48787e-16, 8.74228e-08, -3.48787e-16, -1, 0.250986, -0.14, 2.8657)
+
+[node name="roadCornerSmall4" parent="track_and_path/track/track_elements" instance=ExtResource("11_1s7c7")]
+transform = Transform3D(1, -3.48787e-16, 0, 3.48787e-16, 1, -3.48787e-16, 0, 3.48787e-16, 1, -1.01986, -0.14, 5.16174)
+
+[node name="roadCornerLarger2" parent="track_and_path/track/track_elements" instance=ExtResource("16_kpch4")]
+transform = Transform3D(-1, 3.48787e-16, -8.74228e-08, 3.48787e-16, 1, -3.48787e-16, 8.74228e-08, -3.48787e-16, -1, -0.720789, -0.14, 3.85839)
+
+[node name="roadStraightBridgeMid" parent="track_and_path/track/track_elements" instance=ExtResource("21_y61l6")]
+transform = Transform3D(-4.37114e-08, 3.48787e-16, -1, 3.48787e-16, 1, 3.48787e-16, 1, -3.48787e-16, -4.37114e-08, -1.54213, -0.144472, 4.87697)
+
+[node name="roadCornerBridgeSmall" parent="track_and_path/track/track_elements" instance=ExtResource("22_dkyc0")]
+transform = Transform3D(-4.37114e-08, 6.97574e-16, 1, -2.24477e-23, 1, -6.97574e-16, -1, 4.12293e-22, -4.37114e-08, -2.18869, 0.245424, 5.17502)
+
+[node name="roadCornerLarger3" parent="track_and_path/track/track_elements" instance=ExtResource("16_kpch4")]
+transform = Transform3D(-4.37114e-08, 3.48787e-16, 1, 3.48787e-16, 1, -3.48787e-16, -1, 3.48787e-16, -4.37114e-08, -2.72037, -0.14, 7.15933)
+
+[node name="treeLarge4" parent="track_and_path/track/track_elements" instance=ExtResource("5_n36w7")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.12239e-23, 0, 1.12239e-23, 1, -2.27259, -0.14, 6.63817)
+
+[node name="treeSmall2" parent="track_and_path/track/track_elements" instance=ExtResource("10_mlmfp")]
+transform = Transform3D(-4.37114e-08, 3.48787e-16, -1, 3.48787e-16, 1, 3.48787e-16, 1, -3.48787e-16, -4.37114e-08, -3.82519, -0.14, 6.23394)
+
+[node name="roadStraightLongBump" parent="track_and_path/track/track_elements" instance=ExtResource("23_vxnv1")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.12239e-23, 0, 1.12239e-23, 1, -6.0169, -0.14, 5.16924)
+
+[node name="roadRampLongWall2" parent="track_and_path/track/track_elements" instance=ExtResource("18_t2n40")]
+transform = Transform3D(-1, 3.48787e-16, -8.74228e-08, 3.48787e-16, 1, -3.48787e-16, 8.74228e-08, -3.48787e-16, -1, -3.18854, -0.14, 1.9039)
+
+[node name="grandStand4" parent="track_and_path/track/track_elements" instance=ExtResource("2_x120l")]
+transform = Transform3D(-4.37114e-08, 3.48787e-16, -1, 3.48787e-16, 1, 3.48787e-16, 1, -3.48787e-16, -4.37114e-08, 0.369669, -0.15, -0.723741)
+
+[node name="grandStand5" parent="track_and_path/track/track_elements" instance=ExtResource("2_x120l")]
+transform = Transform3D(-4.37114e-08, 3.48787e-16, -1, 3.48787e-16, 1, 3.48787e-16, 1, -3.48787e-16, -4.37114e-08, 0.369669, -0.15, 0.299657)
+
+[node name="barrierWall4" parent="track_and_path/track/track_elements" instance=ExtResource("9_lnf5y")]
+transform = Transform3D(-4.37114e-08, 3.48787e-16, 1, 3.48787e-16, 1, -3.48787e-16, -1, 3.48787e-16, -4.37114e-08, 1.49547, -0.14, 0.617895)
+
+[node name="tentRoof2" parent="track_and_path/track/track_elements" instance=ExtResource("8_0ii1c")]
+transform = Transform3D(0.989549, 5.39408e-17, 0.144201, -4.66497e-17, 1, -5.39406e-17, -0.144201, 4.665e-17, 0.989549, 5.69342, -0.14, 0.929703)
+
+[node name="treeLarge5" parent="track_and_path/track/track_elements" instance=ExtResource("5_n36w7")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.12239e-23, 0, 1.12239e-23, 1, 4.32633, -0.14, 6.36905)
+
+[node name="treeLarge6" parent="track_and_path/track/track_elements" instance=ExtResource("5_n36w7")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.12239e-23, 0, 1.12239e-23, 1, 3.48722, -0.14, 6.68654)
+
+[node name="treeSmall3" parent="track_and_path/track/track_elements" instance=ExtResource("10_mlmfp")]
+transform = Transform3D(-4.37114e-08, 3.48787e-16, -1, 3.48787e-16, 1, 3.48787e-16, 1, -3.48787e-16, -4.37114e-08, 3.7471, -0.14, 6.63554)
+
+[node name="grandStand6" parent="track_and_path/track/track_elements" instance=ExtResource("2_x120l")]
+transform = Transform3D(-0.298441, 3.48787e-16, -0.954428, 4.36984e-16, 1, 2.28799e-16, 0.954428, -3.48787e-16, -0.298441, 4.79061, -0.15, 3.21092)
+
+[node name="barrierWall5" parent="track_and_path/track/track_elements" instance=ExtResource("9_lnf5y")]
+transform = Transform3D(0.298441, 1.40602e-16, 0.954428, 2.60589e-16, 1, -2.28799e-16, -0.954428, 3.16997e-16, 0.298441, 5.78579, -0.14, 3.80059)
+
+[node name="barrierWall6" parent="track_and_path/track/track_elements" instance=ExtResource("9_lnf5y")]
+transform = Transform3D(0.298441, 1.40603e-16, 0.954428, 2.60589e-16, 1, -2.28799e-16, -0.954428, 3.16997e-16, 0.298441, 5.46471, -0.14, 4.8274)
+
+[node name="grandStand7" parent="track_and_path/track/track_elements" instance=ExtResource("2_x120l")]
+transform = Transform3D(-0.298441, 3.48787e-16, -0.954428, 4.36984e-16, 1, 2.28799e-16, 0.954428, -3.48787e-16, -0.298441, 4.48519, -0.15, 4.18768)
+
+[node name="roadCornerLarge3" parent="track_and_path/track/track_elements" instance=ExtResource("7_v3bah")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.12239e-23, 0, 1.12239e-23, 1, -6.51279, -0.14, 1.25479)
+
+[node name="roadCornerLarge4" parent="track_and_path/track/track_elements" instance=ExtResource("7_v3bah")]
+transform = Transform3D(-4.37114e-08, -3.48787e-16, -1, 3.48787e-16, 1, -3.48788e-16, 1, -3.48786e-16, -4.37114e-08, -5.51547, -0.14, -1.04492)
+
+[node name="roadCornerLargeBorder2" parent="track_and_path/track/track_elements" instance=ExtResource("14_ntwdg")]
+transform = Transform3D(0.998178, 3.48787e-16, 0.0603343, -3.69195e-16, 1, 3.27109e-16, -0.0603343, -3.48787e-16, 0.998178, -6.44259, -0.131214, 1.36696)
+
+[node name="roadCornerLargeBorder3" parent="track_and_path/track/track_elements" instance=ExtResource("14_ntwdg")]
+transform = Transform3D(0.0757793, -3.46781e-16, -0.997124, 3.21353e-16, 1, -3.2336e-16, 0.997125, -2.95925e-16, 0.0757793, -5.65503, -0.14, -0.982572)
+
+[node name="roadCurved4" parent="track_and_path/track/track_elements" instance=ExtResource("6_17k1c")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.12239e-23, 0, 1.12239e-23, 1, -6.01558, -0.14, 3.17732)
+
+[node name="roadStraightLong2" parent="track_and_path/track/track_elements" instance=ExtResource("20_f2nyy")]
+transform = Transform3D(-0.999848, 3.42647e-16, -0.0174525, 3.48787e-16, 1, -3.48787e-16, 0.0174525, -3.54821e-16, -0.999848, -3.23394, -0.14, -0.0711071)
+
+[node name="Path3D" type="Path3D" parent="track_and_path"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.156588, 0)
+curve = SubResource("Curve3D_h7jb4")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="track_and_path/Path3D"]
+transform = Transform3D(0.0780746, 2.04993e-07, 0.996927, 2.08159e-12, 0.999983, -2.05621e-07, -0.996918, 1.60563e-08, 0.0780753, -0.744795, 0.00658166, 0.0114363)
+rotation_mode = 2
+
+[node name="car" parent="track_and_path/Path3D/PathFollow3D" instance=ExtResource("2_8tlhw")]
+transform = Transform3D(0.2, 6.27273e-17, -1.05371e-10, -6.27273e-17, 0.2, -2.18627e-15, 1.05371e-10, 2.18627e-15, 0.2, 0, 0, 0)
+
+[node name="volume_camera_container" type="Node3D" parent="."]
+
+[node name="VisionVolumeCamera" parent="volume_camera_container" instance=ExtResource("25_6sd0k")]
+transform = Transform3D(1, 2.86519e-14, 1.58901e-08, -2.86519e-14, 1, -2.94425e-15, -1.58901e-08, 2.94425e-15, 1, 5.58794e-08, 3.86342, 1.16415e-09)
+
+[node name="change_view_button" type="StaticBody3D" parent="volume_camera_container"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.04877, 3.9548, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="volume_camera_container/change_view_button"]
+shape = SubResource("BoxShape3D_06k5r")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="volume_camera_container/change_view_button"]
+mesh = SubResource("BoxMesh_dee53")
+
+[connection signal="input_event" from="volume_camera_container/change_view_button" to="." method="_on_change_view_button_input_event"]
+
+[editable path="volume_camera_container/VisionVolumeCamera"]
